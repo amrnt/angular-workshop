@@ -12,7 +12,7 @@ module.exports =
         controller: 'EditPostsCtrl'
       });
   })
-  .controller('EditPostsCtrl', function($scope, $http, $stateParams) {
+  .controller('EditPostsCtrl', function($scope, $http, $stateParams, $state) {
 
     var postID = $stateParams.id;
 
@@ -27,7 +27,10 @@ module.exports =
       // PUT
       $http.put('https://afternoon-crag-3805.herokuapp.com/posts/' + postID + '.json', $scope.post)
         .success(function(data) {
-          console.log(data);
+          console.log('updated success');
+          $state.go('posts.show', {
+            id: postID
+          });
         });
     };
 

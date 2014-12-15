@@ -4,5 +4,6 @@
   <p>{{ post.published }}</p>
 
   <a ui-sref="posts.edit({id: post.id})">Edit</a> |
+  <a href="javascript:void(0);" ng-click="destroyPost()">Delete</a> |
   <a ui-sref="posts">Back to posts</a>
 </div>

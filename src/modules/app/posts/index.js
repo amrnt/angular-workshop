@@ -5,6 +5,7 @@
 
 module.exports =
 	angular.module('AngularProj.posts', [
+		require('./new').name,
 		require('./show').name,
 		require('./edit').name
 	])

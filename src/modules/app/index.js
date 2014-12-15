@@ -14,6 +14,7 @@ module.exports =
     //example app module:
     // require('./foo').name,
     require('./posts').name,
+    // require('./comments').name,
     //load extra app modules here, e.g.:
     //require('./frontend').name,
     //require('./admin').name

@@ -12,7 +12,7 @@ module.exports =
         controller: 'ShowPostsCtrl'
       });
   })
-  .controller('ShowPostsCtrl', function($scope, $http, $stateParams) {
+  .controller('ShowPostsCtrl', function($window, $scope, $http, $stateParams, $state) {
 
     var postID = $stateParams.id;
 
@@ -22,5 +22,17 @@ module.exports =
       .success(function(data) {
         $scope.post = data;
       });
+
+    $scope.destroyPost = function() {
+      if (!$window.confirm('Are you sure?')) {
+        return;
+      }
+      //DELETE
+      $http.delete('https://afternoon-crag-3805.herokuapp.com/posts/' + postID + '.json')
+        .success(function(data) {
+          console.log('deleted');
+          $state.go('posts');
+        });
+    };
 
   });
