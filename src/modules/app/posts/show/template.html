@@ -1,0 +1,8 @@
+<div>
+  <h2>{{ post.title }}</h2>
+  <p>{{ post.body }}</p>
+  <p>{{ post.published }}</p>
+
+  <a ui-sref="posts.edit({id: post.id})">Edit</a> |
+  <a ui-sref="posts">Back to posts</a>
+</div>

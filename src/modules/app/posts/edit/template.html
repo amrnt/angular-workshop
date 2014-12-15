@@ -1,1 +1,21 @@
-This is /posts/edit
+<div>
+
+  <form ng-submit="updatePost()">
+    <div>
+      Title:
+      <input type="text" ng-model="post.title" />
+    </div>
+
+    <div>
+      Body:<br />
+      <textarea ng-model="post.body" rows="6" cols="80"></textarea>
+    </div>
+
+    <div>
+      <button type="submit">Update</button>
+    </div>
+  </form>
+
+  <a ui-sref="posts.show({id: post.id})">Back to the post</a> |
+  <a ui-sref="posts">Back to posts</a>
+</div>
